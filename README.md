@@ -1,7 +1,7 @@
 # Get Started Project
 
 we want to develop a web site using the following technology stack: HTML/JS pages as UI, Spring as a core server-side framework and Hibernate to interact with the data layer. We also want to use Maven to build and organize our project.  <br />
-ML algorithm used is Logistic Regression <br />
+
 ## Installation
 
 git clone https://github.com/IlhemBouriel/spring-from-scratch.git <br />
