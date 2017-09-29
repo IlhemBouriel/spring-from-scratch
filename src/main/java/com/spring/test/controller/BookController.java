@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.spring.test.model.Book;
 import com.spring.test.service.BookService;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 public class BookController 
 {
-
+	 private static final Logger log = LoggerFactory.getLogger(BookController.class);
+	 
 	@Autowired
 	protected BookService service;
 
@@ -21,13 +24,16 @@ public class BookController
 	public String getBooks(Model model) {
 		List<Book> books = service.getBooks();
 		model.addAttribute("books",books);
+		log.info("Available {} books !! after LogConfig", books.size());
 		return "books";
 
 	}
 
 	@RequestMapping(value = "create-book")
 	public String createBookGet(Model model) {
-		model.addAttribute("book", new Book());
+		Book book = new Book();
+		model.addAttribute("book",book);
+		log.info("Book is created: {}", book);
 		return "create-book";
 	}
 
